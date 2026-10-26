@@ -1,0 +1,135 @@
+/* Reset e impostazioni globali */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Intestazione */
+.team-header {
+    text-align: center;
+    max-width: 950px;
+    margin-bottom: 50px;
+}
+
+.team-header h1 {
+    color: #e5396b;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.team-header p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #2d2d2d;
+    font-weight: 400;
+}
+
+/* Griglia delle card */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    width: 100%;
+    max-width: 1140px;
+}
+
+/* Singola Card */
+.card-member {
+    background-color: #000000;
+    display: flex;
+    align-items: stretch;
+    height: 105px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-member:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Immagine a sinistra */
+.card-img {
+    flex-shrink: 0;
+    width: 105px;
+    height: 100%;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Testi a destra */
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 18px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.card-text h2 {
+    color: #ffffff;
+    font-size: 1.02rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text h3 {
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text p {
+    color: #38bdf8;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsiveness per schermi medi e piccoli */
+@media (max-width: 992px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .team-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
