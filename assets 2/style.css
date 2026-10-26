@@ -38,10 +38,11 @@ body {
     font-weight: 400;
 }
 
-/* Griglia delle card */
+/* Griglia responsive delle card */
+/* Le card vanno automaticamente a capo (responsive) quando lo spazio si riduce */
 .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 26px;
     width: 100%;
     max-width: 1140px;
@@ -117,13 +118,91 @@ body {
     text-overflow: ellipsis;
 }
 
-/* Responsiveness per schermi medi e piccoli */
-@media (max-width: 992px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Sezione Form Aggiunta Membro */
+.form-section {
+    margin-top: 70px;
+    width: 100%;
+    max-width: 650px;
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 35px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
+.form-section h2 {
+    color: #e5396b;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.form-section > p {
+    text-align: center;
+    color: #666666;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+#add-member-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+.form-group input {
+    font-family: inherit;
+    font-size: 0.92rem;
+    padding: 11px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #ffffff;
+}
+
+.form-group input:focus {
+    border-color: #e5396b;
+    box-shadow: 0 0 0 3px rgba(229, 57, 107, 0.15);
+}
+
+#submit-btn {
+    grid-column: span 2;
+    background-color: #e5396b;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 8px;
+}
+
+#submit-btn:hover {
+    background-color: #cf2757;
+}
+
+#submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* Responsiveness per schermi piccoli */
 @media (max-width: 640px) {
     .team-header h1 {
         font-size: 2.2rem;
@@ -131,5 +210,13 @@ body {
 
     .container {
         grid-template-columns: 1fr;
+    }
+
+    #add-member-form {
+        grid-template-columns: 1fr;
+    }
+
+    #submit-btn {
+        grid-column: span 1;
     }
 }
