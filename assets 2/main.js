@@ -82,7 +82,7 @@ memberForm.addEventListener("submit", function (event) {
     name: name,
     role: role,
     email: email,
-    img: img
+    img: img,
   };
 
   // Aggiungiamo il nuovo membro all'array
